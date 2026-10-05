@@ -1,0 +1,218 @@
+// ========== all the quotes for the random quote box ==========
+// each one is { text, author } - add new ones at the bottom
+const allQuotes = [
+    { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+    { text: "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.", author: "Marilyn Monroe" },
+    { text: "So many books, so little time.", author: "Frank Zappa" },
+    { text: "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", author: "Albert Einstein" },
+    { text: "A room without books is like a body without a soul.", author: "Marcus Tullius Cicero" },
+    { text: "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.", author: "Bernard M. Baruch" },
+    { text: "You know you're in love when you can't fall asleep because reality is finally better than your dreams.", author: "Dr. Seuss" },
+    { text: "You only live once, but if you do it right, once is enough.", author: "Mae West" },
+    { text: "Be the change that you wish to see in the world.", author: "Mahatma Gandhi" },
+    { text: "In three words I can sum up everything I've learned about life: it goes on.", author: "Robert Frost" },
+    { text: "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.", author: "J.K. Rowling" },
+    { text: "Don't walk in front of me… I may not follow. Don't walk behind me… I may not lead. Walk beside me… just be my friend.", author: "Albert Camus" },
+    { text: "If you tell the truth, you don't have to remember anything.", author: "Mark Twain" },
+    { text: "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.", author: "Maya Angelou" },
+    { text: "Friendship ... is born at the moment when one man says to another 'What! You too? I thought that no one but myself . . .'", author: "C.S. Lewis" },
+    { text: "To live is the rarest thing in the world. Most people exist, that is all.", author: "Oscar Wilde" },
+    { text: "A friend is someone who knows all about you and still loves you.", author: "Elbert Hubbard" },
+    { text: "Always forgive your enemies; nothing annoys them so much.", author: "Oscar Wilde" },
+    { text: "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that.", author: "Martin Luther King Jr." },
+    { text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi" },
+    { text: "We accept the love we think we deserve.", author: "Stephen Chbosky" },
+    { text: "Without music, life would be a mistake.", author: "Friedrich Nietzsche" },
+    { text: "I am so clever that sometimes I don't understand a single word of what I am saying.", author: "Oscar Wilde" },
+    { text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.", author: "Ralph Waldo Emerson" },
+    { text: "Insanity is doing the same thing, over and over again, but expecting different results.", author: "Narcotics Anonymous" },
+    { text: "It is better to be hated for what you are than to be loved for what you are not.", author: "André Gide" },
+    { text: "I believe that everything happens for a reason. People change so that you can learn to let go, things go wrong so that you appreciate them when they're right, you believe lies so you eventually learn to trust no one but yourself, and sometimes good things fall apart so better things can fall together.", author: "Marilyn Monroe" },
+    { text: "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover.", author: "H. Jackson Brown Jr." },
+    { text: "The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.", author: "Jane Austen" },
+    { text: "It is our choices, Harry, that show what we truly are, far more than our abilities.", author: "J.K. Rowling" },
+    { text: "Imperfection is beauty, madness is genius and it's better to be absolutely ridiculous than absolutely boring.", author: "Marilyn Monroe" },
+    { text: "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.", author: "Albert Einstein" },
+    { text: "It does not do to dwell on dreams and forget to live.", author: "J.K. Rowling" },
+    { text: "Good friends, good books, and a sleepy conscience: this is the ideal life.", author: "Mark Twain" },
+    { text: "As he read, I fell in love the way you fall asleep: slowly, and then all at once.", author: "John Green" },
+    { text: "We are all in the gutter, but some of us are looking at the stars.", author: "Oscar Wilde" },
+    { text: "The fool doth think he is wise, but the wise man knows himself to be a fool.", author: "William Shakespeare" },
+    { text: "Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.", author: "Neil Gaiman" },
+    { text: "It is better to remain silent at the risk of being thought a fool, than to talk and remove all doubt of it.", author: "Maurice Switzer" },
+    { text: "Whenever you find yourself on the side of the majority, it is time to reform (or pause and reflect).", author: "Mark Twain" },
+    { text: "Life is what happens to us while we are making other plans.", author: "Allen Saunders" },
+    { text: "Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.", author: "Bil Keane" },
+    { text: "It is not a lack of love, but a lack of friendship that makes unhappy marriages.", author: "Friedrich Nietzsche" },
+    { text: "I have not failed. I've just found 10,000 ways that won't work.", author: "Thomas A. Edison" },
+    { text: "The opposite of love is not hate, it's indifference. The opposite of art is not ugliness, it's indifference. The opposite of faith is not heresy, it's indifference. And the opposite of life is not death, it's indifference.", author: "Elie Wiesel" },
+    { text: "The man who does not read has no advantage over the man who cannot read.", author: "Mark Twain" },
+    { text: "A woman is like a tea bag; you never know how strong it is until it's in hot water.", author: "Eleanor Roosevelt" },
+    { text: "I may not have gone where I intended to go, but I think I have ended up where I needed to be.", author: "Douglas Adams" },
+    { text: "Outside of a dog, a book is man's best friend. Inside of a dog it's too dark to read.", author: "Groucho Marx" },
+    { text: "I am enough of an artist to draw freely upon my imagination. Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.", author: "Albert Einstein" },
+    { text: "I solemnly swear that I am up to no good.", author: "J.K. Rowling" },
+    { text: "I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living.", author: "Dr. Seuss" },
+    { text: "Have you ever been in love? Horrible isn't it? It makes you so vulnerable. It opens your chest and it opens up your heart and it means that someone can get inside you and mess you up.", author: "Neil Gaiman" },
+    { text: "A reader lives a thousand lives before he dies, said Jojen. The man who never reads lives only one.", author: "George R.R. Martin" },
+    { text: "A day without sunshine is like, you know, night.", author: "Steve Martin" },
+    { text: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.", author: "Lao Tzu" },
+    { text: "Never put off till tomorrow what may be done day after tomorrow just as well.", author: "Mark Twain" },
+    { text: "It is never too late to be what you might have been.", author: "George Eliot" },
+    { text: "For every minute you are angry you lose sixty seconds of happiness.", author: "Ralph Waldo Emerson" },
+    { text: "I love deadlines. I love the whooshing noise they make as they go by.", author: "Douglas Adams" },
+    { text: "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.", author: "J.K. Rowling" },
+    { text: "I'm not upset that you lied to me, I'm upset that from now on I can't believe you.", author: "Friedrich Nietzsche" },
+    { text: "There is no greater agony than bearing an untold story inside you.", author: "Maya Angelou" },
+    { text: "If you judge people, you have no time to love them.", author: "Mother Teresa" },
+    { text: "If you only read the books that everyone else is reading, you can only think what everyone else is thinking.", author: "Haruki Murakami" },
+    { text: "There is never a time or place for true love. It happens accidentally, in a heartbeat, in a single flashing, throbbing moment.", author: "Sarah Dessen" },
+    { text: "If you can't explain it to a six year old, you don't understand it yourself.", author: "Albert Einstein" },
+    { text: "Love is that condition in which the happiness of another person is essential to your own.", author: "Robert A. Heinlein" },
+    { text: "Anyone who thinks sitting in church can make you a Christian must also think that sitting in a garage can make you a car.", author: "Garrison Keillor" },
+    { text: "Everything you can imagine is real.", author: "Pablo Picasso" },
+    { text: "I have always imagined that Paradise will be a kind of library.", author: "Jorge Luis Borges" },
+    { text: "You love me. Real or not real? I tell him, \"Real.\"", author: "Suzanne Collins" },
+    { text: "We don't see things as they are, we see them as we are.", author: "Anaïs Nin" },
+    { text: "Women and cats will do as they please, and men and dogs should relax and get used to the idea.", author: "Robert A. Heinlein" },
+    { text: "Sometimes the questions are complicated and the answers are simple.", author: "Dr. Seuss" },
+    { text: "You can never get a cup of tea large enough or a book long enough to suit me.", author: "C.S. Lewis" },
+    { text: "Never trust anyone who has not brought a book with them.", author: "Lemony Snicket" },
+    { text: "Life isn't about finding yourself. Life is about creating yourself.", author: "George Bernard Shaw" },
+    { text: "We read to know we're not alone.", author: "William Nicholson" },
+    { text: "Sometimes, you read a book and it fills you with this weird evangelical zeal, and you become convinced that the shattered world will never be put back together unless and until all living humans read the book.", author: "John Green" },
+    { text: "All you need is love. But a little chocolate now and then doesn't hurt.", author: "Charles M. Schulz" },
+    { text: "Beauty is in the eye of the beholder and it may be necessary from time to time to give a stupid or misinformed beholder a black eye.", author: "Jim Henson" },
+    { text: "Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?", author: "J.K. Rowling" },
+    { text: "I'm not afraid of death; I just don't want to be there when it happens.", author: "Woody Allen" },
+    { text: "If one cannot enjoy reading a book over and over again, there is no use in reading it at all.", author: "Oscar Wilde" },
+    { text: "To the well-organized mind, death is but the next great adventure.", author: "J.K. Rowling" },
+    { text: "If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales.", author: "Albert Einstein" },
+    { text: "It is impossible to live without failing at something, unless you live so cautiously that you might as well not have lived at all—in which case, you fail by default.", author: "J.K. Rowling" },
+    { text: "Logic will get you from A to Z; imagination will get you everywhere.", author: "Albert Einstein" },
+    { text: "The truth is, everyone is going to hurt you. You just got to find the ones worth suffering for.", author: "Bob Marley" },
+    { text: "Whenever I feel the need to exercise, I lie down until it goes away.", author: "Paul Terry" },
+    { text: "Sometimes people are beautiful. Not in looks. Not in what they say. Just in what they are.", author: "Markus Zusak" },
+    { text: "You don't get to choose if you get hurt in this world...but you do have some say in who hurts you. I like my choices.", author: "John Green" },
+    { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+    { text: "Folks are usually about as happy as they make their minds up to be.", author: "Abraham Lincoln" },
+    { text: "There is no friend as loyal as a book.", author: "Ernest Hemingway" },
+    { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston S. Churchill" },
+    { text: "The story so far: In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.", author: "Douglas Adams" },
+    { text: "There is nothing I would not do for those who are really my friends. I have no notion of loving people by halves, it is not my nature.", author: "Jane Austen" },
+    { text: "One good thing about music, when it hits you, you feel no pain.", author: "Bob Marley" },
+    { text: "I find television very educating. Every time somebody turns on the set, I go into the other room and read a book.", author: "Groucho Marx" },
+    { text: "So, this is my life. And I want you to know that I am both happy and sad and I'm still trying to figure out how that could be.", author: "Stephen Chbosky" },
+    { text: "Love is like the wind, you can't see it but you can feel it.", author: "Nicholas Sparks" },
+    { text: "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.", author: "Helen Keller" },
+    { text: "Not all of us can do great things. But we can do small things with great love.", author: "Mother Teresa" },
+    { text: "Some people never go crazy. What truly horrible lives they must lead.", author: "Charles Bukowski" },
+    { text: "Life is like riding a bicycle. To keep your balance, you must keep moving.", author: "Albert Einstein" },
+    { text: "You don't love someone because they're perfect, you love them in spite of the fact that they're not.", author: "Jodi Picoult" },
+    { text: "Love never dies a natural death. It dies because we don't know how to replenish its source. It dies of blindness and errors and betrayals. It dies of illness and wounds; it dies of weariness, of witherings, of tarnishings.", author: "Anaïs Nin" },
+    { text: "If you live to be a hundred, I want to live to be a hundred minus one day so I never have to live without you.", author: "Joan Powers" },
+    { text: "What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.", author: "J.D. Salinger" },
+    { text: "Not all those who wander are lost.", author: "J.R.R. Tolkien" },
+    { text: "\"I wish it need not have happened in my time,\" said Frodo. \"So do I,\" said Gandalf, \"and so do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given us.\"", author: "J.R.R. Tolkien" },
+    { text: "If I had a flower for every time I thought of you...I could walk through my garden forever.", author: "Alfred Tennyson" },
+    { text: "If you can make a woman laugh, you can make her do anything.", author: "Marilyn Monroe" },
+    { text: "It matters not what someone is born, but what they grow to be.", author: "J.K. Rowling" },
+    { text: "We're all a little weird. And life is a little weird. And when we find someone whose weirdness is compatible with ours, we join up with them and fall into mutually satisfying weirdness—and call it love—true love.", author: "Robert Fulghum" },
+    { text: "It is what you read when you don't have to that determines what you will be when you can't help it.", author: "Oscar Wilde" },
+    { text: "The difference between genius and stupidity is: genius has its limits.", author: "Alexandre Dumas fils" },
+    { text: "The trouble with having an open mind, of course, is that people will insist on coming along and trying to put things in it.", author: "Terry Pratchett" },
+    { text: "Do one thing every day that scares you.", author: "Eleanor Roosevelt" },
+    { text: "Reality continues to ruin my life.", author: "Bill Watterson" },
+    { text: "I would venture to guess that Anon, who wrote so many poems without signing them, was often a woman.", author: "Virginia Woolf" },
+    { text: "Some infinities are bigger than other infinities.", author: "John Green" },
+    { text: "You don't have a soul, Doctor. You are a soul. You have a body, temporarily.", author: "Walter M. Miller Jr." },
+    { text: "\"One must always be careful of books,\" said Tessa, \"and what is inside them, for words have the power to change us.\"", author: "Cassandra Clare" },
+    { text: "Time you enjoy wasting is not wasted time.", author: "Marthe Troly-Curtin" },
+    { text: "Things change. And friends leave. Life doesn't stop for anybody.", author: "Stephen Chbosky" },
+    { text: "I declare after all there is no enjoyment like reading! How much sooner one tires of any thing than of a book! When I have a house of my own, I shall be miserable if I have not an excellent library.", author: "Jane Austen" },
+    { text: "If there's a book that you want to read, but it hasn't been written yet, then you must write it.", author: "Toni Morrison" }
+];
+
+
+// ========== random quote box ==========
+
+// grab the elements we need from the page
+const quoteTextEl = document.getElementById("quote-text");
+const quoteAuthorEl = document.getElementById("quote-author");
+const newQuoteBtn = document.getElementById("new-quote-btn");
+
+// remember the last quote shown so we dont get the same one twice in a row
+let prevIndex = -1;
+
+function showRandomQuote() {
+    let randomIndex;
+
+    // keep picking until we get a different one
+    do {
+        randomIndex = Math.floor(Math.random() * allQuotes.length);
+    } while (randomIndex === prevIndex);
+
+    prevIndex = randomIndex;
+
+    quoteTextEl.textContent = allQuotes[randomIndex].text;
+    quoteAuthorEl.textContent = "- " + allQuotes[randomIndex].author;
+}
+
+// new quote on every click, and one right when the page loads
+newQuoteBtn.addEventListener("click", showRandomQuote);
+showRandomQuote();
+
+
+// ========== favorite quotes (the 4 flip cards) ==========
+
+// order here = order of the cards on the page
+const favQuotes = [
+    { text: "When you surround an army, leave an outlet free. Do not press a desperate foe too hard.", author: "Sun Tzu, The Art of War" },
+    { text: "An army of sheep led by a lion is better than an army of lions led by a sheep.", author: "Alexander the Great" },
+    { text: "Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives… on a mote of dust suspended in a sunbeam.", author: "Carl Sagan, Pale Blue Dot" },
+    { text: "Icarus laughed as he fell, for he knew that to fall, you must first touch the sky.", author: "Ishaan Sinha" }
+];
+
+// these give us every quote/author spot on the card backs (4 of each)
+const backQuoteEls = document.querySelectorAll(".back-quote");
+const backAuthorEls = document.querySelectorAll(".back-author");
+
+// put quote number i into card number i
+for (let i = 0; i < favQuotes.length; i++) {
+    backQuoteEls[i].textContent = favQuotes[i].text;
+    backAuthorEls[i].textContent = "- " + favQuotes[i].author;
+}
+
+
+// ========== background music ==========
+
+const bgMusic = document.getElementById("bg-music");
+const musicBtn = document.getElementById("music-btn");
+
+// volume goes from 0 to 1, 0.4 is nice and soft
+bgMusic.volume = 0.4;
+
+// clicking the button plays the music if it's paused, pauses it if it's playing
+musicBtn.addEventListener("click", function () {
+    if (bgMusic.paused) {
+        // play() gives back a promise, catch() runs if the browser refuses to play
+        bgMusic.play().catch(function (err) {
+            console.log("music couldn't play:", err);
+        });
+    } else {
+        bgMusic.pause();
+    }
+});
+
+// when the music starts: show the pause symbol and turn the button dark
+bgMusic.addEventListener("play", function () {
+    musicBtn.textContent = "❚❚";
+    musicBtn.classList.add("playing");
+});
+
+// when it stops: go back to the note symbol and the green button
+bgMusic.addEventListener("pause", function () {
+    musicBtn.textContent = "♫";
+    musicBtn.classList.remove("playing");
+});
+

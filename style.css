@@ -1,0 +1,698 @@
+/* ========== colors + reset ========== */
+
+:root {
+    --green: #5f8f7b;
+    --green-hover: #4e7866;
+    --light-green: #a9c7ba;
+    --pale-green: #d8e6df;
+    --cream: #f7f5f0;
+    --dark: #2f3a34;
+    --gray: #6b7770;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* so the navbar doesnt cover the section titles when you click a link */
+    scroll-padding-top: 64px;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+}
+
+
+/* ========== hero image ========== */
+
+.hero {
+    height: 100vh;
+    background-image: url("Hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-text {
+    margin: auto;
+}
+
+.hero-text h1 {
+    font-size: 64px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+/* ========== navbar ========== */
+
+/* sticky = it scrolls normally until it hits the top, then stays there */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background-color: rgba(247, 245, 240, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(47, 58, 52, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+}
+
+/* little green dot before the logo text */
+.logo::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--dark);
+    background-color: rgba(95, 143, 123, 0.15);
+}
+
+.nav-links a:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+}
+
+/* phones: hide the logo and spread the links across the whole bar */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 12px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+
+/* ========== random quote section ========== */
+
+.quote-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 32px;
+    background-color: var(--cream);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* small green text above a heading (used in quotes + about) */
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--dark);
+}
+
+.quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* the big quote card - takes up both columns */
+#quote-box {
+    grid-column: 1 / 3;
+    background: radial-gradient(circle at top left, #3f5a4d, var(--dark) 60%);
+    color: var(--cream);
+    border-radius: 20px;
+    padding: 56px 48px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(47, 58, 52, 0.2);
+}
+
+.quote-mark {
+    display: block;
+    height: 56px;
+    font-family: Georgia, serif;
+    font-size: 120px;
+    line-height: 1;
+    color: var(--green);
+    opacity: 0.7;
+}
+
+#quote-text {
+    max-width: 760px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+#quote-author {
+    margin-top: 24px;
+    font-size: 14px;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--light-green);
+}
+
+#new-quote-btn {
+    margin-top: 32px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--green);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#new-quote-btn:hover {
+    background-color: var(--green-hover);
+    transform: translateY(-2px);
+}
+
+/* the two small white cards under it */
+#welcome-box,
+#why-box {
+    background-color: #fff;
+    border-top: 3px solid var(--green);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(47, 58, 52, 0.08);
+}
+
+#welcome-box h3,
+#why-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+#welcome-box p,
+#why-box p {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* tablet / phone: stack everything in one column */
+@media (max-width: 800px) {
+    .quote-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #quote-box {
+        grid-column: auto;
+        padding: 40px 24px 32px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ========== favorite quotes (stacking cards) ========== */
+
+.favs {
+    background-color: var(--dark);
+    /* dark layer over the photo so the title is easy to read */
+    background-image: linear-gradient(rgba(47, 58, 52, 0.45), rgba(47, 58, 52, 0.45)), url("favorite-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.favs-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: var(--cream);
+    font-size: 32px;
+}
+
+#card-stack {
+    --total-cards: 4;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* each card sticks near the top, so the next one slides over it as you scroll.
+   --index is set in the html (1 to 4), the rest is worked out from it */
+.fav-card {
+    --index0: calc(var(--index) - 1);
+    --reverse-index: calc(var(--total-cards) - var(--index0));
+    position: sticky;
+    top: 15vh;
+    height: 320px;
+    margin-bottom: 40px;
+}
+
+/* flip box: the back side folds up from the bottom on hover */
+.flip {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 8px 24px rgba(47, 58, 52, 0.15);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip:hover {
+    transform: scale(1.03);
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+}
+
+/* front of the card = a photo. if the photo is missing the gradient shows instead */
+.face-front {
+    background-size: cover;
+    background-position: center;
+}
+
+.flip--1 .face-front {
+    background-image: url("favorite-1.jpg"), linear-gradient(160deg, #4b6b5c, #1d2e26);
+}
+
+.flip--2 .face-front {
+    background-image: url("favorite-2.jpg"), linear-gradient(160deg, #b08a4e, #5a4323);
+}
+
+.flip--3 .face-front {
+    background-image: url("favorite-3.jpg"), linear-gradient(160deg, #1a2238, #060a14);
+}
+
+.flip--4 .face-front {
+    background-image: url("favorite-4.jpg"), linear-gradient(160deg, #d98e4a, #7a3b2e);
+}
+
+/* back of the card = the quote. starts rotated away, hover rotates it into view */
+.face-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 32px;
+    background-color: var(--dark);
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flip:hover .face-back {
+    transform: rotateX(0deg);
+}
+
+.back-quote {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.back-author {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--pale-green);
+}
+
+/* cards shrink a little as the next one covers them.
+   scroll animations only work in some browsers so this is wrapped in @supports */
+@supports (view-timeline-name: --cards-scroll) {
+    @keyframes shrink {
+        to {
+            transform: scale(calc(1.08 - calc(0.08 * var(--reverse-index))));
+        }
+    }
+
+    #card-stack {
+        view-timeline-name: --cards-scroll;
+    }
+
+    .flip {
+        --start-range: calc(var(--index0) / var(--total-cards) * 100%);
+        --end-range: calc(var(--index) / var(--total-cards) * 100%);
+
+        animation: linear shrink forwards;
+        animation-timeline: --cards-scroll;
+        animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+    }
+}
+
+
+/* ========== about + contact (shared) ========== */
+
+.about,
+.contact {
+    min-height: 100vh;
+    padding: 100px 32px 32px;
+}
+
+
+/* ========== about me ========== */
+
+.about {
+    background-color: #e8efe9;
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.about-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-size: 40px;
+    margin: 8px 0 20px;
+    color: var(--dark);
+}
+
+.about-intro {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--gray);
+    max-width: 760px;
+}
+
+/* the little pills for languages / tools */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 28px 0 40px;
+}
+
+.tech-list li {
+    padding: 6px 16px;
+    border-radius: 999px;
+    background-color: #fff;
+    color: var(--dark);
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(47, 58, 52, 0.08);
+    transition: 0.2s;
+}
+
+.tech-list li:hover {
+    background-color: var(--green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 3 cards per row */
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.about-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(47, 58, 52, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(47, 58, 52, 0.15);
+}
+
+.about-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+/* short green line above each card title */
+.about-card h3::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-bottom: 12px;
+    border-radius: 2px;
+    background-color: var(--green);
+}
+
+.about-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+/* last card is dark, same look as the quote box */
+.about-card--dark {
+    background-color: var(--dark);
+}
+
+.about-card--dark h3 {
+    color: var(--cream);
+}
+
+.about-card--dark p {
+    color: var(--pale-green);
+}
+
+@media (max-width: 800px) {
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+}
+
+
+/* ========== floating music button ========== */
+
+#music-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 20;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--green);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(47, 58, 52, 0.25);
+    transition: 0.2s;
+}
+
+#music-btn:hover {
+    background-color: var(--green-hover);
+}
+
+/* the "playing" class is added by music.js */
+#music-btn.playing {
+    background-color: var(--dark);
+}
+
+
+/* ========== contact ========== */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark);
+    color: var(--cream);
+    padding-bottom: 32px;
+}
+
+.contact-wrap {
+    margin: auto;
+    max-width: 720px;
+    text-align: center;
+}
+
+.contact-sub {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--light-green);
+}
+
+.contact-title {
+    margin: 8px 0 16px;
+    font-size: 40px;
+}
+
+.contact-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--pale-green);
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 32px 20px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    background-color: rgba(95, 143, 123, 0.25);
+    border-color: var(--green);
+}
+
+.contact-card:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
+/* round green circle holding the icon */
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+
+.contact-icon svg {
+    width: 24px;
+    fill: white;
+}
+
+/* linkedin uses the letters "in" instead of an svg */
+.contact-icon--text {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.contact-label {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--light-green);
+}
+
+.contact-value {
+    font-size: 16px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: var(--light-green);
+}
+
+@media (max-width: 800px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-title {
+        font-size: 32px;
+    }
+}
